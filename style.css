@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #211e1e;
+}
+
+.container{
+    width: 964px;
+    min-height: 964px;
+    display: flex;
+    flex-wrap: wrap;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.grid{
+    width: 60px;
+    height: 60px;
+}
