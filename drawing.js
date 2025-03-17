@@ -15,6 +15,7 @@ function getRandomRGB(){
     return `rgb(${r},${g},${b})`;
     
 }
+
 function colorGrid(e){
     e.target.style["background-color"] = getRandomRGB()
     }
