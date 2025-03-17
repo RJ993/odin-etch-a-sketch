@@ -2,7 +2,7 @@ const container = document.querySelector(".container")
 const input = document.querySelector("input")
 const scale = document.querySelector(".scale")
 
-function reset() {
+function reset(){
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
@@ -12,7 +12,7 @@ function getRandomRGB(){
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-    return `rgba(${r},${g},${b})`;
+    return `rgb(${r},${g},${b})`;
     
 }
 function colorGrid(e){
