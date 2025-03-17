@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+
 *,
 *::before,
 *::after {
@@ -8,12 +10,38 @@
     margin: 0;
     padding: 0;
 }
-
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #211e1e;
+}
+
+h1{
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+input, button{
+    font-size: 50px;
+    color: white;
+    border-color: white;
+    max-width: 400px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #211e1e;
+    font-family: "Megrim";
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.heading{
+    color: white;
+    font-family: "Megrim";
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
 }
 
 .container{
@@ -24,9 +52,4 @@ body{
     border-color: white;
     border-width: 2px;
     border-style: solid;
-}
-
-.grid{
-    width: 60px;
-    height: 60px;
 }

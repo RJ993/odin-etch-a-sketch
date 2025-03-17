@@ -1,4 +1,12 @@
 const container = document.querySelector(".container")
+const input = document.querySelector("input")
+const scale = document.querySelector(".scale")
+
+function reset() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 function getRandomRGB(){
     const r = Math.floor(Math.random() * 256);
@@ -12,13 +20,21 @@ function colorGrid(e){
     }
 
 function createGrid(){
-    for (let i = 0; i < 16 * 16; i++) {
+    reset();
+    const scaleNumber = input.valueAsNumber
+    if(scaleNumber > 100 || !Number.isInteger(scaleNumber) || scaleNumber < 0){
+        input.focus()
+    }else if (scaleNumber >= 1){
+        for (let i = 0; i < scaleNumber * scaleNumber; i++) {
         const gridUnit = document.createElement('div');
         gridUnit.classList.add('grid');
         container.appendChild(gridUnit);
+        gridUnit.style.width = `${960 / scaleNumber}px`;
+        gridUnit.style.height = `${960 / scaleNumber}px`;
+        }
     }
     const grid = document.querySelectorAll(".grid")
     grid.forEach(div => div.addEventListener('mouseenter', colorGrid))
 }
 
-document.addEventListener("DOMContentLoaded", createGrid)
+scale.addEventListener('click', createGrid) 
