@@ -19,7 +19,8 @@ function colorGrid(e){
     e.target.style["background-color"] = getRandomRGB();
 }
 
-function createGrid(){
+function createGrid(e){
+    e.target.classList.add('shrinking')
     reset();
     const scaleNumber = input.valueAsNumber;
     if(scaleNumber > 100 || !Number.isInteger(scaleNumber) || scaleNumber < 0){
@@ -37,4 +38,9 @@ function createGrid(){
     grid.forEach(div => div.addEventListener('mouseenter', colorGrid));
 }
 
+function buttonAnimation(e){
+if(e.propertyName !== 'transform') return; // Skips if "box-shadow" isn't part of class
+this.classList.remove("shrinking")
+}
 scale.addEventListener('click', createGrid);
+scale.addEventListener('transitionend', buttonAnimation);
