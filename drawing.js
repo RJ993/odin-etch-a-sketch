@@ -39,7 +39,7 @@ function createGrid(e){
 }
 
 function buttonAnimation(e){
-if(e.propertyName !== 'transform') return; // Skips if "box-shadow" isn't part of class
+if(e.propertyName !== 'transform') return; // Skips if "transform" isn't part of class
 this.classList.remove("shrinking")
 }
 scale.addEventListener('click', createGrid);
